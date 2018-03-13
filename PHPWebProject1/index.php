@@ -19,19 +19,19 @@
 	$meno = $email = $pohlavie = $koment = $stranka = "";
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["meno"])) {
-			$menoErr = "Meno je potrebnÈ";
+			$menoErr = "Meno je potrebn√©";
 		} else {
 			$meno = test_input($_POST["meno"]);
 			if (!preg_match("/^[a-zA-Z ]*$/",$meno)) {
-				$menoErr = "PovolenÈ s˙ len pÌsmen· a medzery";
+				$menoErr = "Povolen√© s√∫ len p√≠smen√° a medzery";
 			}
 		}
 		if (empty($_POST["email"])) {
-			$emailErr = "Email je potrebn˝";
+			$emailErr = "Email je potrebn√Ω";
 		} else {
 			$email = test_input($_POST["email"]);
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$emailErr = "Zl˝ vloûen˝ form·t emailu";
+				$emailErr = "Zl√Ω vlo≈æen√Ω form√°t emailu";
 			}
 		}
 		if (empty($_POST["stranka"])) {
@@ -39,7 +39,7 @@
 		} else {
 			$stranka = test_input($_POST["stranka"]);
 			if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$stranka)) {
-				$strankaErr = "ZlÈ URL";
+				$strankaErr = "Zl√© URL";
 			}
 		}
 		if (empty($_POST["koment"])) {
@@ -49,7 +49,7 @@
 		}
 
 		if (empty($_POST["pohlavie"])) {
-			$pohlavieErr = "Pohlavie je potrebnÈ";
+			$pohlavieErr = "Pohlavie je potrebn√©";
 		} else {
 			$pohlavie = test_input($_POST["pohlavie"]);
 		}
@@ -63,9 +63,9 @@
 	}
 	//$conn->close();
 	?>
-	<h2>PrÌklad valid·cie formul·ra</h2>
+	<h2>Pr√≠klad valid√°cie formul√°ra</h2>
 	<p>
-		<span class="error">* tieto inform·cie s˙ nutnÈ.</span>
+		<span class="error">* tieto inform√°cie s√∫ nutn√©.</span>
 	</p>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		Meno:
@@ -82,41 +82,41 @@
 		</span>
 		<br />
 		<br />
-		Str·nka:
+		Str√°nka:
 		<input type="text" name="stranka" value="<?php echo $stranka;?>" />
 		<span class="error">
 			* <?php echo $strankaErr;?>
 		</span>
 		<br />
 		<br />
-		Koment·r:
+		Koment√°r:
 		<textarea name="koment" rows="5" cols="40">
 			<?php echo $koment;?>
 		</textarea>
 		<br />
 		<br />
 		Pohlavie:
-		<input type="radio" name="pohlavie" <?php if (isset($pohlavie) && $pohlavie=="ûena") echo "checked";?> value="ûena" />ûena
-		<input type="radio" name="pohlavie" <?php if (isset($pohlavie) && $pohlavie=="muû") echo "checked";?> value="muû" />muû
+		<input type="radio" name="pohlavie" <?php if (isset($pohlavie) && $pohlavie=="≈æena") echo "checked";?> value="≈æena" />≈æena
+		<input type="radio" name="pohlavie" <?php if (isset($pohlavie) && $pohlavie=="mu≈æ") echo "checked";?> value="mu≈æ" />mu≈æ
 		<span class="error">
 			* <?php echo $pohlavieErr;?>
 		</span>
 		<br />
 		<br />
-		<input type="submit" name="submit" value="Odoslaù" />
+		<input type="submit" name="submit" value="Odosla≈•" />
 	</form>
 	<?php
-	echo "<h2>Tvoje vloûenÈ inform·cie:</h2>";
+	echo "<h2>Tvoje vlo≈æen√© inform√°cie:</h2>";
 	if (!preg_match("/^[a-zA-Z ]*$/",$meno)) {
-		$menoErr = "PovolenÈ s˙ len pÌsmen· a medzery";
+		$menoErr = "Povolen√© s√∫ len p√≠smen√° a medzery";
     } else {echo $meno;}
 	echo "<br>";
 	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		$emailErr = "Zl˝ vloûen˝ form·t emailu";
+		$emailErr = "Zl√Ω vlo≈æen√Ω form√°t emailu";
     } else {echo $email;}
 	echo "<br>";
 	if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$stranka)) {
-		$strankaErr = "ZlÈ URL";
+		$strankaErr = "Zl√© URL";
     } else {echo $stranka;}
 echo "<br>";
 echo $koment;
