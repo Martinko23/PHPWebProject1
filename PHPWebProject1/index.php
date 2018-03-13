@@ -103,7 +103,7 @@
 		</span>
 		<br />
 		<br />
-		<input type="submit" name="submit" value="Odoslať" />
+		<input type="submit" name="submit" value="Odoslat" />
 	</form>
 	<?php
 	echo "<h2>Tvoje vložené informácie:</h2>";
