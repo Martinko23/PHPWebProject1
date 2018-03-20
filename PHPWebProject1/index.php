@@ -11,7 +11,7 @@
 	<?php
 	//phpinfo();
 	//echo "ahoj dusan";
-	include 'connect.php';
+	//include 'connect.php' ODVOLAVAM SA NA DATABAZU;
 	//$sql = "INSERT INTO myguests (firstname, lastname, email)
 	//VALUES ('dusan', 'mraz', '1mrazik1@gmail.com')";
 
@@ -103,7 +103,7 @@
 		</span>
 		<br />
 		<br />
-		<input type="submit" name="submit" value="Odoslat" />
+		<input type="submit" name="submit" value="Odoslať" />
 	</form>
 	<?php
 	echo "<h2>Tvoje vložené informácie:</h2>";
